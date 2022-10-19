@@ -135,7 +135,7 @@ async def help(ctx):
     embed.add_field(name="Help", value="`help`", inline=False)
     await ctx.send(embed=embed)
 
-'''
+
 # ERROR CASE
 @bot.event
 async def on_command_error(ctx, error):
@@ -145,7 +145,7 @@ async def on_command_error(ctx, error):
         await ctx.send("La commande n'a pas abouti ou n'existe pas.")
     elif isinstance(error, commands.MissingPermissions):
         await ctx.send("Vous n'avez pas la permission de faire cela !")
-'''
+
 
 # RUN THE BOT
 bot.run(os.getenv("TOKENTEST"))
