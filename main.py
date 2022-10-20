@@ -105,7 +105,7 @@ async def help(ctx):
         color=discord.Color.blue()
     )
     embed.set_footer(text="Information demandé par: {}".format(ctx.author.display_name))
-    embed.add_field(name="Admin", value="`clear <nombre>`, `kick <@name> <raison>`, `ban <@name> <raison>`")
+    embed.add_field(name="Admin", value="`clear`, `kick`, `ban`")
     embed.add_field(name="Divers", value="`hello`, `ping`, `github`", inline=False)
     embed.add_field(name="Help", value="`help`", inline=False)
     await ctx.send(embed=embed)
