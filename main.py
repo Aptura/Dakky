@@ -67,31 +67,6 @@ Error
         await ctx.send(embed=embed)
 
 
-# UNBAN COMMAND BUT DOESN'T WORK NOW
-@bot.command(name='unban')
-@commands.has_permissions(ban_members=True)
-async def unban(ctx, *, member: discord.User):
-    try:
-        banned_users = await discord.Guild.fetch_ban(user)
-        member_name, member_discriminator = member.split('#')
-        for ban_entry in banned_users:
-            user = ban_entry.user
-            if (user.name, user.discriminator) == (member_name, member_discriminator):
-                await unban(discord.User)
-                embed = discord.Embed(color=discord.Colour.blue(), title="", description="")
-                embed.add_field(name="Unban:", value=f"""
-**{user}** a été unban par {ctx.author.display_name}.
-""", inline=True)
-                await ctx.send(embed=embed)
-                return
-    except discord.NotFound:
-        embed = discord.Embed(color=discord.Colour.blue(), title="", description="")
-        embed.add_field(name="Error:", value=f"""
-Utilisateur introuvable.
-""", inline=True)
-        await ctx.send(embed=embed)
-
-
 # CLEAR COMMAND
 @bot.command(name='clear')
 @commands.has_permissions(manage_messages=True)
