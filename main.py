@@ -17,6 +17,7 @@ bot = commands.Bot(command_prefix='dakkytest ', intents=default_intents, help_co
 # CLASSIC ON READY
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Game(name='se construire !'))
     print(f"{bot.user.display_name} est connecté au serveur !")
 
 
