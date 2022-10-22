@@ -73,7 +73,7 @@ Error
 @commands.has_permissions(manage_messages=True)
 async def clear(ctx, amount: int):
     await ctx.channel.purge(limit=amount + 1)
-    await ctx.channel.send(f"{amount} messages on été supprimé.")
+    await ctx.channel.send(f"Les messages ont été supprimés.")
 
 
 # SAY HI TO THE BOT 
