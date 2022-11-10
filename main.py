@@ -11,7 +11,7 @@ default_intents.message_content = True
 default_intents.members = True
 default_intents.presences = True
 
-bot = commands.Bot(command_prefix='dakkytest ', intents=default_intents, help_command=None)
+bot = commands.Bot(command_prefix='dakky ', intents=default_intents, help_command=None)
 
 
 # CLASSIC ON READY
@@ -25,8 +25,13 @@ async def on_ready():
 @bot.event
 async def on_member_join(user: discord.Member):
     general_channel: discord.TextChannel = bot.get_channel(1014600921839321140)
-    await general_channel.send(content=f"Bienvenue {user.mention}, amuse toi bien ici !")
+    await general_channel.send(content=f"Bienvenue {user.mention}, amuse toi bien ici ! :doggylike:")
 
+# ON LEAVING MEMBER
+@bot.event
+async def on_member_leave(user: discord.Member):
+    general_channel: discord.TextChannel = bot.get_channel(1014600921839321140)
+    await general_channel.send(content=f"{user.mention} a décidé de nous quitter ... :sadcat:")
 
 # KICK COMMAND
 @bot.command()
@@ -124,4 +129,4 @@ async def on_command_error(ctx, error):
 
 
 # RUN THE BOT
-bot.run(os.getenv("TOKENTEST"))
+bot.run(os.getenv("TOKEN"))
