@@ -25,13 +25,13 @@ async def on_ready():
 @bot.event
 async def on_member_join(user: discord.Member):
     general_channel: discord.TextChannel = bot.get_channel(1014600921839321140)
-    await general_channel.send(content=f"Bienvenue {user.mention}, amuse toi bien ici ! :doggylike:")
+    await general_channel.send(content=f"Bienvenue {user.mention}, amuse toi bien ici ! <:doggylike:944322269579214869>")
 
 # ON LEAVING MEMBER
 @bot.event
-async def on_member_leave(user: discord.Member):
+async def on_member_remove(user: discord.Member):
     general_channel: discord.TextChannel = bot.get_channel(1014600921839321140)
-    await general_channel.send(content=f"{user.mention} a décidé de nous quitter ... :sadcat:")
+    await general_channel.send(content=f"{user.mention} a décidé de nous quitter ... <:sadcat:1040377228439068813>")
 
 # KICK COMMAND
 @bot.command()
