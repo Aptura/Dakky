@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix='dakky ', intents=default_intents, help_comman
 # CLASSIC ON READY
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game(name='se construire !'))
+    await bot.change_presence(activity=discord.Game(name='se développer !'))
     print(f"{bot.user.display_name} est connecté au serveur !")
 
 
