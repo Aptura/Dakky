@@ -20,6 +20,11 @@ async def on_ready():
     await bot.change_presence(activity=discord.Game(name='se développer !'))
     print(f"{bot.user.display_name} est connecté au serveur !")
 
+# ON BOT READY
+@bot.event
+async def on_ready():
+    general_channel: discord.TextChannel = bot.get_channel(1014600921839321140)
+    await general_channel.send(content=f"Merci Aptura pour la mise à jour ! ♥")
 
 # ON JOINING MEMBER
 @bot.event
